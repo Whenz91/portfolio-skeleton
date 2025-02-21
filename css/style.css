@@ -12,6 +12,7 @@ body {
     font-family: "Poppins", serif;
     font-size: 16px;
     position: relative;
+    overflow-x: hidden;
 }
 h1 {
     font-size: 48px;
@@ -166,6 +167,48 @@ button {
         }
     }
 }
+.experience-container {
+    container-name: experience-container;
+    container-type: inline-size;
+}
+.expereince-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    & > .date-pill {
+        background-color: white;
+        border-radius: 100px;
+        max-width: max-content;
+        max-height: max-content;
+        padding: 10px 16px;
+    }
+
+    & > .body {
+        & h4 {
+            margin: 0 0 10px;
+        }
+    }
+}
+
+@container experience-container (min-width: 400px) {
+    .expereince-card {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+  }
+
+.education-card {
+    background-color: #29605B;
+    color: white;
+    padding: 1rem;
+
+    & > svg {
+        fill: white;
+    }
+    & > h4 {
+        margin: 0 0 10px;
+    }
+}
 
 .logo-image {
     width: auto;
@@ -272,6 +315,12 @@ button {
     flex-wrap: wrap;
 }
 
+.flex-cols-6 {
+    & > * {
+        width: 15%;
+    }
+}
+
 .justify-items-center {
     justify-items: center;
 }
@@ -350,6 +399,20 @@ button {
     }
     .sm-col-span-6 {
         grid-column: span 6 / span 6;
+    }
+
+    .md-flex-cols-3 {
+        & > * {
+            width: 30%;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .sm-flex-cols-2 {
+        & > * {
+            width: 45%;
+        }
     }
 }
 
